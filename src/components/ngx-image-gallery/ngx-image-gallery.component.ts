@@ -216,7 +216,7 @@ export class NgxImageGalleryComponent implements OnInit, OnChanges {
 
     // keyboard event
     @HostListener('window:keydown', ['$event'])
-    private onKeyboardInput(event: KeyboardEvent) {
+    public onKeyboardInput(event: KeyboardEvent) {
         if (this.conf.reactToKeyboard && this.opened && !this.loading) {
             if (KEY_CODES[event.keyCode] == 'RIGHT') {
                 this.next();
@@ -232,7 +232,7 @@ export class NgxImageGalleryComponent implements OnInit, OnChanges {
 
     // window resize event
     @HostListener('window:resize', ['$event'])
-    private onWindowResize(event: Event) {
+    public onWindowResize(event: Event) {
         if (this.opened && !this.loading) {
             this.fitThumbnails();
             setTimeout(() => this.scrollThumbnails(), 300);
